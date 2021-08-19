@@ -12,5 +12,29 @@
 </head>
 <body>
   
+<nav class="navbar navbar-expand-lg navbar-info bg-info">
+  <a class="navbar-brand text-white" href="#">Hospital Managment System</a>
+  <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon text-white"></span>
+  </button>
+  <div class="collapse navbar-collapse " id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item actve">
+        <a class="nav-link text-white" href="#">Admin</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Doctor</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Patient</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
