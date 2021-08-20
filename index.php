@@ -1,5 +1,6 @@
 <?php
 include ('include/header.php');
+
 ?>
 <!DOCTYPE html>
 
@@ -10,7 +11,7 @@ include ('include/header.php');
     </head>
     <body>
         <div style="margin-top: 50px"></div>
-        <div class="container ml-auto">
+        <div class="container">
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-3 mx-1 my-1 shadow">

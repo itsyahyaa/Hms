@@ -20,7 +20,7 @@
   <div class="collapse navbar-collapse " id="navbarNavDropdown">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item actve">
-        <a class="nav-link text-white" href="#">Admin</a>
+        <a class="nav-link text-white" href="adminlogin.php">Admin</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white" href="#">Doctor</a>
