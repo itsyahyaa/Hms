@@ -8,16 +8,36 @@ if(isset($_POST['login'])){
     $password = $_POST['password'];
 
     
-    $error = array();
+    // $error = array();
   
 
-    if(empty($username)){
-        $error['admin'] = "Enter Username";
+    if(empty($username) || empty($password)){
+        // $error['admin'] = "Enter Username";
+        header("Location:index.php?error=emptyfield&username".$username."&password".$password);
+        exit();
+    }  
+    // else if(!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/",$username)){
+    //         // $error['admin'] = "Enter Password";
+    //         header("Location:index.php?error=invalidusernamemail&username".$username);
+    //         exit();
         
-    }else if(empty($password)){
-        $error['admin'] = "Enter Password";
-    }
-    if (count($error)==0){
+    // }else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+    //     // $error['admin'] = "Enter Password";
+    //     header("Location:index.php?error=invalidmail&username".$username);
+    //     exit();
+    // }
+    // else if(!preg_match("/^[a-zA-Z0-9]*$/",$username)){
+    //     // $error['admin'] = "Enter Password";
+    //     header("Location:index.php?error=invalidusename&username".$username);
+    //     exit();
+    // }
+    // else if($password !== $passwordrepeat){
+    //     // $error['admin'] = "Enter Password";
+    //     header("Location:index.php?error=passwordCheck&mail".$email);
+    //     exit();
+    // }
+    // // if (count($error)==0){
+    else {
         $query = "SELECT * FROM admin WHERE username='$username' AND password='$password'";
 
         $result = mysqli_query($conn,$query); 
@@ -25,11 +45,11 @@ if(isset($_POST['login'])){
         if(mysqli_num_rows($result) == 1){
             echo "<script>alert('Successfully login as Admin')</script>";
             $_SESSION['admin'] = $username;
-            //header("Location:");
+            header("Location:index.php?error=Success");
         }else{
-            echo "<script>alert('Invalid Username Or Password')</script>";
+            header("Location:index.php?error=InvalidPassword&mail".$email);
         }
-    }
+     }
 }
 
 ?>
@@ -38,7 +58,7 @@ if(isset($_POST['login'])){
 <head>
         <meta charset="UTF-8">
         <title>HMS Home Page</title>
-    </head>
+</head>
 <body>
     <div style="margin-top:100px"></div>
     <div class="container">
@@ -47,17 +67,10 @@ if(isset($_POST['login'])){
                 <div class="col-md-3"></div>
                 <div class="col-md-6 jumbotron">
                     <form action="" method="POST" class="my-2">
+                    
                         <div class="alert alert-danger">
-                            <?php 
-                            if(isset($error['admin'])){
-                                $show = $error['admin'];
-                                
-                            }else{
-                                $show = "";
-                                
-                            }
-                            echo $show;
-                            ?>
+                               
+                         
                         </div>
                         <div class="form-group">
                             <label for="">Username</label>
