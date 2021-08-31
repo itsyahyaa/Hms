@@ -41,7 +41,7 @@ include("../include/connection.php");
                                         <h5 class="text-white">Admin</h5>
                                     </div>
                                     <div class="com-md-6">
-                                        <a href="#"><i class="fas fa-users-cog fa-3x my-5" style="color:white;"></i></a>
+                                        <a href="admin.php"><i class="fas fa-users-cog fa-3x my-5" style="color:white;"></i></a>
                                     </div>
                                 </div>
                             </div>
