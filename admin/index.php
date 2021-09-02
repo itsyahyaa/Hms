@@ -3,6 +3,11 @@ session_start();
 include("../include/header.php");
 include("../include/connection.php");
 
+$query = "SELECT * FROM admin";
+$ad  = mysqli_query($conn,$query);
+$num = mysqli_num_rows($ad);
+
+
 
 ?>
 <!DOCTYPE html>
@@ -30,12 +35,6 @@ include("../include/connection.php");
                             <div class="col-md-12 my-1">
                                 <div class="row">
                                     <div class="col-md-6">
-
-                                    <?php 
-                                        $query = "SELECT * FROM admin";
-                                        $ad  = mysqli_query($conn,$query);
-                                        $num = mysqli_num_rows($ad);
-                                    ?>
                                         <h5 class="my-3  text-white" style="font-size:30px;"><?php echo $num;?></h5>
                                         <h5 class="text-white">Total</h5>
                                         <h5 class="text-white">Admin</h5>

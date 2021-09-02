@@ -28,47 +28,39 @@ session_start();
                         <div class="row">
                             <div class="col-md-6">
                                 <h5 class="text-center">All Admin</h5>
-                                <?php
-                                    $ad = $_SESSION['admin'];
-                                    $query = "SELECT * FROM admin WHERE username !='$ad'";
-                                    $res = mysqli_query($conn,$query);
-
-                                    $output = "
                                     <table class='table table-bordered'>
                                     <th style='width:10%;'>ID</th>
                                     <th>Username</th>
                                     <th style='width:10%;'>Action</th>
-
-                                   
-                                    ";
-
+                                <?php
+                                    $ad = $_SESSION['admin'];
+                                    $query = "SELECT * FROM admin WHERE username !='$ad'";
+                                    $res = mysqli_query($conn,$query);
                                     if(mysqli_num_rows($res) < 1){
-                                         $output .="<h5 class='text-center'>No New Admin</h5>";
+                                         echo "<h5 class='text-center'>No New Admin</h5>";
                                     }
                                     while($row=mysqli_fetch_array($res)){
                                         $id = $row['id'];
                                         $username=$row['username'];
 
-                                        $output .="
+                                        echo"
                                         <tr>
                                             <td>$id</td>
                                             <td>$username</td>
-                                            <td><a href='../include/adminlogin.php?id=$id' id='$id' class='btn btn-danger' >Remove</a></td>
+                                            <td><a href='functions.php?id=$id' id='$id' class='btn btn-danger' >Remove</a></td>
                                         ";
                                     }
-                                    $output .="
+                                    ?>
                                     </tr>
                                 </table>
-                                    ";
-                                    echo $output;
-                                ?>
+                                   
                                 
                                         
                                     
                             </div>
                             <div class="col-md-6">
                             <h5 class="text-center">Add Admin</h5>
-                            <form action="../include/adminlogin.php" method="post" enctype="multipart/form-data">
+                            <form action="functions.php" method="post" enctype="multipart/form-data">
                             <?php if(isset($_GET['error'])) { ?>
                         <div class="alert alert-danger" role="alert">
                             <?=$_GET['error']?>

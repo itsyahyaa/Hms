@@ -17,7 +17,7 @@ include ('include/header.php');
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6 jumbotron">
-                    <form action="include/adminlogin.php" method="POST" class="my-2">
+                    <form action="include/functions.php" method="POST" class="my-2">
                         <h1 class="text-center p-3">Login</h1>
                         <?php if(isset($_GET['error'])) { ?>
                         <div class="alert alert-danger" role="alert">
